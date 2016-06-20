@@ -1,0 +1,31 @@
+{
+  "name": "phantomjs-crawler-demo",
+  "bin": {
+    "phantomjs-crawler": "./index.js"
+  },
+  "version": "1.0.1",
+  "description": "异步加载的网页抓取",
+  "main": "index.js",
+  "dependencies": {
+    "phantomjs": "^2.1.7",
+    "yargs": "^4.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itiwll/phantomjs-crawler-demo.git"
+  },
+  "keywords": [
+    "网页抓取",
+    "异步"
+  ],
+  "author": "itiwll",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itiwll/phantomjs-crawler-demo/issues"
+  },
+  "homepage": "https://github.com/itiwll/phantomjs-crawler-demo#readme"
+}
