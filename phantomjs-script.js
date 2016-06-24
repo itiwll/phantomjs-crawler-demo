@@ -14,6 +14,22 @@ if (system.args.length === 1) {
     var log = system.args[4];
 }
 
+page.onError = function(msg, trace) {
+
+  // var msgStack = ['ERROR: ' + msg];
+
+  // if (trace && trace.length) {
+  //   msgStack.push('TRACE:');
+  //   trace.forEach(function(t) {
+  //     msgStack.push(' -> ' + t.file + ': ' + t.line + (t.function ? ' (in function "' + t.function +'")' : ''));
+  //   });
+  // }
+
+  // console.error(msgStack.join('\n'));
+  
+
+};
+
 page.onConsoleMessage = function(msg) {
 	// 打印页面消息至控制台
   if (msg.indexOf(consoleTag)>-1) {
@@ -42,7 +58,17 @@ page.open(url, function (s) {
               }else {
                 var selectors = selectors.split('|');
                 for (var i = 0; i < selectors.length; i++) {
-                  console.log(consoleTag + $(selectors[i]).html());
+                  try{
+                    var el = $(selectors[i]);
+                    if (el.length) {
+                      console.log(consoleTag + el.html());
+                    }else {
+                      console.log(consoleTag);
+                    }
+                  }
+                  catch(err){
+                    console.log(consoleTag + '元素' +selectors[i] + '抓取异常');
+                  }
                 }
               }
 
